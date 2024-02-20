@@ -8,6 +8,7 @@ void p(void) {
   fflush(stdin);
   gets(buffer);
   uint32_t *p = (uint32_t *)(buffer + 80);
+  // some pointer things
   if (*p == 0xb0000000) {
     printf("(%p)\n", p);
     exit(1);
