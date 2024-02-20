@@ -4,6 +4,12 @@
 
 ### GDB
 
+Use intel syntax:
+
+```gdb
+set disassembly-flavor intel
+```
+
 Print saved EBP and saved EIP:
 
 ```gdb
@@ -46,6 +52,8 @@ To get an interactive shell ([see why](https://unix.stackexchange.com/questions/
 
 ```bash
 cat payload.txt - | ./<binary>
+or
+(python -c "print(<payload>)" | cat) | ./<binary>
 ```
 
 Generate payloads:

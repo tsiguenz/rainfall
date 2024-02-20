@@ -47,14 +47,6 @@ Padding = `64 (buffer size) + 8 (align byes size) + 4 (saved EBP size) = 76`
 
 Address of function run = `0x08048444`
 
-Check endianess:
-
-```bash
-level1@RainFall:~$ readelf -h level1
-(...)
-Data: 2's complement, little endian
-```
-
 Well we can generate the payload with the informations:
 
 ```bash
