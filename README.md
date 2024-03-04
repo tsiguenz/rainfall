@@ -29,7 +29,7 @@ set $eip=0x0
 Print disasembled binary:
 
 ```bash
-objdump -M intel -d <binary>
+objdump --no-show-raw-insn -M intel -d <binary>
 ```
 
 Check if the stack is executable:
