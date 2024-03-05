@@ -22,6 +22,12 @@ Edit register:
 set $eip=0x0
 ```
 
+Get infos about beginning of stack or heap:
+
+```gdb
+info proc mapping
+```
+
 ---
 
 ### Get binary informations

