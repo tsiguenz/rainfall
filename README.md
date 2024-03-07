@@ -6,26 +6,32 @@
 
 Use intel syntax:
 
-```gdb
+```bash
 set disassembly-flavor intel
 ```
 
 Print saved EBP and saved EIP:
 
-```gdb
+```bash
 x/2xw $ebp
 ```
 
 Edit register:
 
-```gdb
+```bash
 set $eip=0x0
 ```
 
 Get infos about beginning of stack or heap:
 
-```gdb
+```bash
 info proc mapping
+```
+
+Run program with command in stdin:
+
+```bash
+r < <(python -c "print('B' * 150)")
 ```
 
 ---
