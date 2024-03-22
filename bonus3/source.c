@@ -20,6 +20,7 @@ int main(int ac, char *av[]) {
 
   fread(&buffer[66], 1, 65, fd);
   fclose(fd);
+  
   if (!strcmp(buffer, av[1])) {
     execl("/bin/sh", "sh", NULL);
   } else {
