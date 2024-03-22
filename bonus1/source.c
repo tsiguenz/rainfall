@@ -4,7 +4,7 @@
 
 int main(int ac, char **av) {
   int size = atoi(av[1]);
-  if (size >= 9)
+  if (size > 9)
       return 1;
   char buff[40];
   memcpy(buff, av[2], size * 4);

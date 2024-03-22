@@ -13,8 +13,7 @@ void m(void) { // 0x08048468
 int main(int ac, char **av) {
   void *p1 = malloc(64);
   void (*p2)(void) = malloc(4);
-  p2 = m;
+  *p2 = m;
   strcpy(p1, av[1]);
-  p2 = *p2;
-  p2();
+  (*p2)();
 }
