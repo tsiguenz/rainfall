@@ -9,7 +9,6 @@
 .DS_Store
 *.dSYM
 .vscode/*
-setup_vm.sh
 .nfs*
 *.log
 a.out
