@@ -7,7 +7,7 @@ for i in {0..9}; do
 	mkdir "$base_dir"
 	touch "$base_dir/flag"
 	touch "$base_dir/source.c"
-	touch "$base_dir/walkthrough.md"
+	touch "$base_dir/README.md"
 done
 
 for i in {0..3}; do
@@ -15,5 +15,5 @@ for i in {0..3}; do
 	mkdir "$base_dir"
 	touch "$base_dir/flag"
 	touch "$base_dir/source.c"
-	touch "$base_dir/walkthrough.md"
+	touch "$base_dir/README.md"
 done
