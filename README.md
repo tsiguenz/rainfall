@@ -1,9 +1,25 @@
 # rainfall
 
+<!--toc:start-->
+- [rainfall](#rainfall)
+  - [Introduction](#introduction)
+  - [Usefull commands](#usefull-commands)
+    - [GDB](#gdb)
+    - [Get binary informations](#get-binary-informations)
+    - [Misc](#misc)
+  - [Usefull link](#usefull-link)
+<!--toc:end-->
+
+## Introduction
+
+The goal of this project is to increase our privileges with a vulnerable binary to go to the next level.  
+For each level we need to write a pseudo code of the binary in `source.c` but they are only a representation of the asm code, they may not compile.   
+To improve our understanding of assembly language we decide to not use any decompiler like ghidra or IDA and only use vanilla gdb.
+
 ## Usefull commands
 
 ### GDB
-
+t
 Use intel syntax:
 
 ```bash
